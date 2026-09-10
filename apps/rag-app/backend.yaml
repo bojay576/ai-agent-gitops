@@ -24,7 +24,7 @@ spec:
         - name: MILVUS_ADDRESS
           value: "milvus.milvus.svc.cluster.local:19530"
         - name: OLLAMA_URL
-          value: "http://10.32.118.44:11434"
+          value: "http://172.20.10.5:11434"
         - name: OLLAMA_EMBEDDING_MODEL
           value: "nomic-embed-text"
         - name: OLLAMA_MODEL
