@@ -70,6 +70,7 @@ spec:
       containers:
       - name: mysql
         image: swr.cn-north-4.myhuaweicloud.com/ddn-k8s/docker.io/sakiladb/mysql:8 # 使用官方镜像
+        imagePullPolicy: IfNotPresent
         env:
         - name: MYSQL_ROOT_PASSWORD
           value: "native" # 实验环境密码统一，生产环境请用 Secret
