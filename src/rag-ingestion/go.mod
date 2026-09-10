@@ -3,8 +3,8 @@ module rag-ingestion
 go 1.25.8
 
 require (
-	github.com/ledongthuc/pdf v0.0.0-20250511090121-5959a4027728
-	github.com/milvus-io/milvus-sdk-go/v2 v2.4.2
+	github.com/ledongthuc/pdf v0.0.0-20260907135840-6c8c28e0e8a0
+	github.com/milvus-io/milvus-sdk-go/v2 v2.4.0
 	github.com/tmc/langchaingo v0.1.14
 )
 
@@ -33,7 +33,6 @@ require (
 	gitlab.com/golang-commonmark/mdurl v0.0.0-20191124015652-932350d1cb84 // indirect
 	gitlab.com/golang-commonmark/puny v0.0.0-20191124015043-9f83538fa04f // indirect
 	golang.org/x/net v0.43.0 // indirect
-	golang.org/x/sync v0.16.0 // indirect
 	golang.org/x/sys v0.35.0 // indirect
 	golang.org/x/text v0.28.0 // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20250122153221-138b5a5a4fd4 // indirect

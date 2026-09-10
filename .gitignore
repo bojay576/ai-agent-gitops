@@ -1,0 +1,29 @@
+# --- Node ---
+node_modules/
+dist/
+
+# --- Archives (build artifacts, omit from repo) ---
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+*.gz
+*.bz2
+
+# --- Go ---
+*.exe
+*.test
+*.out
+bin/
+
+# --- Env / secrets ---
+.env
+.env.local
+.env.*.local
+
+# --- OS / IDE ---
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo

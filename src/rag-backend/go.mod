@@ -4,7 +4,7 @@ go 1.25.8
 
 require (
 	github.com/gin-gonic/gin v1.12.0
-	github.com/milvus-io/milvus-sdk-go/v2 v2.4.2
+	github.com/milvus-io/milvus-sdk-go/v2 v2.4.0
 )
 
 require (
@@ -49,7 +49,6 @@ require (
 	golang.org/x/arch v0.22.0 // indirect
 	golang.org/x/crypto v0.48.0 // indirect
 	golang.org/x/net v0.51.0 // indirect
-	golang.org/x/sync v0.19.0 // indirect
 	golang.org/x/sys v0.41.0 // indirect
 	golang.org/x/text v0.34.0 // indirect
 	google.golang.org/genproto v0.0.0-20220503193339-ba3ae3f07e29 // indirect

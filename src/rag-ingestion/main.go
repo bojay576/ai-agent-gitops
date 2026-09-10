@@ -22,16 +22,16 @@ import (
 // --- 配置常量 ---
 const (
 	// Milvus配置 (请根据你的NodePort更新)
-	milvusAddress  = "192.168.30.17:30225" // !! 替换成你的Milvus NodePort
+	milvusAddress  = "192.168.30.17:32222" // !! 替换成你的Milvus NodePort
 	collectionName = "tech_docs"
 	embeddingDim   = 768 // nomic-embed-text v1.5 模型的维度是768
 
 	// Ollama配置 (请根据你的NodePort更新)
-	ollamaURL            = "http://10.32.118.44:11434" // !! 替换成你的Ollama NodePort
+	ollamaURL            = "http://172.20.10.5:11434" // !! 替换成你的Ollama NodePort
 	ollamaEmbeddingModel = "nomic-embed-text"
 
 	// 数据源路径
-	knowledgeBasePath = "../rag-agent-gitops/knowledge-base" // 相对于当前目录的路径
+	knowledgeBasePath = "/root/ai-agent-gitops/knowledge-base" // 相对于当前目录的路径
 )
 
 // --- 结构体定义 ---

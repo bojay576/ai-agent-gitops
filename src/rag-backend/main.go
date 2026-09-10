@@ -1,4 +1,3 @@
-// ~/rag-backend/main.go
 package main
 
 import (
@@ -31,8 +30,8 @@ const (
 )
 
 var (
-	milvusAddress  = getEnv("MILVUS_ADDRESS", "192.168.30.17:30225")
-	ollamaURL          = getEnv("OLLAMA_URL", "http://10.32.118.44:11434")
+	milvusAddress  = getEnv("MILVUS_ADDRESS", "192.168.30.17:32222")
+	ollamaURL          = getEnv("OLLAMA_URL", "http://172.20.10.5:11434")
 	ollamaEmbeddingModel = getEnv("OLLAMA_EMBEDDING_MODEL", "nomic-embed-text")
 	ollamaLLMModel     = getEnv("OLLAMA_MODEL", "qwen:7b-chat-q4_k_m")
 )
