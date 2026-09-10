@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rag-frontend
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rag-frontend
+  template:
+    metadata:
+      labels:
+        app: rag-frontend
+    spec:
+      containers:
+      - name: frontend
+        image: rag-frontend:v1.0
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: rag-frontend-svc
+  namespace: default
+spec:
+  type: NodePort # 将前端服务暴露出来，以便我们可以通过浏览器访问
+  selector:
+    app: rag-frontend
+  ports:
+  - protocol: TCP
+    port: 3000
+    targetPort: 3000

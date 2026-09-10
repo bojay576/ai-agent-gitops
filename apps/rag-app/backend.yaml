@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rag-backend
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rag-backend
+  template:
+    metadata:
+      labels:
+        app: rag-backend
+    spec:
+      containers:
+      - name: backend
+        image: rag-backend:v1.0
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+        
+        env:
+        - name: MILVUS_ADDRESS
+          value: "milvus.milvus.svc.cluster.local:19530"
+        - name: OLLAMA_URL
+          value: "http://10.32.118.44:11434"
+        - name: OLLAMA_EMBEDDING_MODEL
+          value: "nomic-embed-text"
+        - name: OLLAMA_MODEL
+          value: "qwen:7b-chat-q4_k_m"
+        
+        # --- 新增启动探针 ---
+        startupProbe:
+          httpGet:
+            path: /healthz
+            port: 8080
+          # 首次探测前等待60秒，给Milvus一些启动时间
+          initialDelaySeconds: 60
+          # 每5秒探测一次
+          periodSeconds: 10
+          # 最多尝试30次（总共约2.5分钟），足够Milvus启动了
+          failureThreshold: 30
+        # ---------------------
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: rag-backend-svc # 这就是前端server.js里引用的服务名
+  namespace: default
+spec:
+  selector:
+    app: rag-backend
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 8080
